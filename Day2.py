@@ -6,14 +6,13 @@ while True:
     if not line:
         break
     split = line.split('-')
-    min = int(split[0])
+    min = int(split[0])-1
     split = split[1].split(' ')
-    max = int(split[0])
+    max = int(split[0])-1
     letter = split[1][0]
     pw = split[2]
-    check = len(pw.split(letter))-1
 
-    if (check >= min) and (check <= max):
+    if (pw[min]==letter) ^ (pw[max]==letter):
         count += 1
 
 print(count)
